@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+            <table>
+                <tr>
+                    <td>First name:</td>
+                    <td><input type="text" th:field="*{firstName}" /></td>
+                    <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First name id too short</td>
+                </tr>
+                <tr>
+                    <td>Last name:</td>
+                    <td><input type="text" th:field="*{lastName}" /></td>
+                    <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last name id too short</td>
+                </tr>
+                <tr>
+                    <td>Account number:</td>
+                    <td><input type="text" th:field="*{accountNumber}" /></td>
+                    <td th:if="${#fields.hasErrors('accountNumber')}" th:errors="*{accountNumber}">Account number must has 16 numbers</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
